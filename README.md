@@ -42,18 +42,18 @@ critical.su/
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/critical.su.git
+git clone https://github.com/vmilfe/critical.su.git
 cd critical.su
 ```
 
 2. Install dependencies
 ```bash
-npm install
+pnpm install
 ```
 
 3. Start the development server
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ## 🚧 Future Development Plans
@@ -68,9 +68,11 @@ Posts are stored as MDX files in the `src/content/posts` directory. Example post
 
 ```mdx
 ---
-title: My New Post
-date: 2023-01-01
-description: A brief description of the post
+id: 2
+title: this fist page completed! :\\
+createDate: 2025-03-05T21:31:50
+postTitle: wtf, critical search a work again?
+blureBackground: true
 ---
 
 # My Amazing Post
