@@ -1,6 +1,8 @@
 # critical.su website
 
 [![critical.su](https://img.shields.io/badge/Critical.su-212121?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIgMTlsLTctNyA3LTcgNyA3LTcgN3oiPjwvcGF0aD48L3N2Zz4=&labelColor=FF0000)](https://critical.su)
+![critical.su screenshot](images/critical.png)
+
 
 A modern, stylish landing page for critical.su
 
