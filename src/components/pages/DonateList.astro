@@ -1,0 +1,19 @@
+---
+import Header from "../Header.astro";
+import Footer from "../Footer.astro";
+---
+
+<Header />
+<div class="text-main mx-56 mt-14">
+    <p class="font-bold text-4xl">
+        in development...
+        <a
+            class="text-secondary hover:text-main"
+            href={import.meta.env.CRYPTOBOT_URL}
+            target="_blank"
+        >
+            cryptobot
+        </a>
+    </p>
+</div>
+<Footer />

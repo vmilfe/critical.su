@@ -1,0 +1,20 @@
+body {
+  background-color: theme('colors.backgroundMain');
+  font-family: theme('fontFamily.inconsolata');
+  font-weight: 800;
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+
+  filter: brightness(20%);
+}
+.blure  {
+  filter: blur(5px) brightness(20%);
+}

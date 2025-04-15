@@ -1,0 +1,14 @@
+---
+import { getActualViewers } from '../components/api/Viewer'
+
+const viewers = await getActualViewers(Astro);
+---
+
+
+<footer class="fixed text-secondary bottom-2 text-lg text-center w-full" transition:persist>
+    <p>
+        {viewers} visitors (its bug)
+        | <a href={import.meta.env.GITHUB_URL} class="hover:text-main" target="_blank">github (click)</a> |
+        2025
+    </p>
+</footer>

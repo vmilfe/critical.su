@@ -1,0 +1,35 @@
+---
+import Header from '../Header.astro';
+import Footer from '../Footer.astro';
+
+import InfoButton from '../buttons/Info';
+
+import animation from '../../styles/animation.module.css'
+---
+
+<Header />
+<div class="text-main mx-56 mt-14 font-bold">
+    <div class="flex">
+        <div class="max-h-10 mb-4">
+            <span class="text-4xl">critical - fullstack dev</span>
+        </div>
+
+        <div class={animation.pulseAction}>
+            <span
+                class="bg-secondary pr-1 relative top-1"
+            />
+        </div>
+    </div>
+        
+    <div class="text-lg/5 pl-4">
+        <p>name: <span class="font-extrabold">critical [ilya]</span></p>
+        <p>age: 18</p>
+        <p>languages: ru/en</p>
+        <p>location: moscow/russia</p>
+        <p>timezone: utc+3</p>
+        <p>luv music: trap</p>
+    </div>
+
+    <InfoButton client:idle/>
+</div>
+<Footer />

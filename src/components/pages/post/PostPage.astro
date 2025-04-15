@@ -1,0 +1,37 @@
+---
+import Header from '../../Header.astro';
+import Footer from '../../Footer.astro';
+
+// pb-10 
+---
+
+<Header />
+<div class="text-main mx-56">
+  <a href="/posts">
+    <div class="flex gap-2 text-xl mt-14 pr-3 rounded-t-sm bg-backgroundHover hover:bg-background cursor-pointer  max-w-max">
+      <img src="/svg/switcher.svg" class="w-8 transform -rotate-90" alt="back"/>
+      
+      <p class="flex items-center justify-center">back</p>
+    </div>
+  </a>
+  
+  <div class="px-4 bg-background"> 
+    <div class="
+      prose-invert
+      prose-h1:font-bold 
+      prose-h1:text-4xl
+      prose-pre:mt-4
+      prose-pre:px-4 
+      prose-pre:py-2 
+      prose-pre:w-min
+      prose-pre:overflow-x-auto  
+      prose-pre:!bg-backgroundMain/50
+      prose-pre:border-under
+      prose-pre:border
+      prose-pre:rounded-sm
+    ">
+      <slot/>
+    </div>
+  </div>
+</div>
+<Footer />

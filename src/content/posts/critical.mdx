@@ -1,0 +1,42 @@
+---
+id: 2
+title: this fist page completed! :\\
+createDate: 2025-03-05T21:31:50
+postTitle: wtf, critical search a work again?
+blureBackground: true
+---
+
+import {ImageBase} from '../../components/buttons/Post.tsx'
+import CodePast from '../../components/utils/Code.astro';
+
+
+# my first post!
+
+<div className="pt-5 pl-4 text-lg/5">
+    most likely, this is where all the manuals for my git repositories, other manuals, and so on will be published. 
+
+    u can also contact me on <a href="https://t.me/awixa" target="_blank" className="text-secondary hover:text-main ">telegram (click)</a>.
+
+    <br/>
+    its test code
+
+    <div className='flex justify-between '>
+        <div className='pb-2'>
+            <CodePast subtext="test subtitle text">
+                ```tsx
+                function Main() {
+                    return (
+                        <div className="main-content">
+                            <p>This is the main component of the page.</p>
+                        </div>
+                    );
+                }
+                ```
+            </CodePast>
+        </div>
+        
+        <ImageBase src="/img/bgmai.png" style='mt-auto'/>
+    </div>
+</div>
+
+

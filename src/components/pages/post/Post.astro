@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import { formatDistance } from 'date-fns';
+
+import Header from '../../Header.astro';
+import Footer from '../../Footer.astro';
+
+const posts = await getCollection('posts')
+---
+
+<Header/>
+<div class="text-main mx-56 mt-14">
+    <p class="font-bold text-4xl">
+        my current posts...
+    </p>
+    <ul class="flex flex-col pt-6 pl-4 gap-4 text-lg/5">
+        {posts.map(item => (
+            <li class="max-w-[50%] bg-background hover:bg-backgroundHover cursor-pointer">
+                <a href={ item.data.clickable ? `/post/${item.data.id}` : undefined }>
+                    <div class="my-2 mx-4">         
+                        <p>{item.data.title}</p>
+                        <p class="mb-2 text-sm italic">{item.data.postTitle ?? ''}</p>
+                        <div class="flex justify-between text-sm">
+                            <div class=" gap-6">
+                                <p class="text-secondary">{formatDistance(item.data.createDate || new Date(), new Date(), { addSuffix: true })}</p>
+                            </div>
+                            <p class="text-warning">{item.data.warningText ?? ''}</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        ))}
+    </ul>
+</div>
+<Footer />

@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+
+import Layout from '../../layouts/Layout.astro';
+import PostInfo from '../../components/pages/post/PostPage.astro';
+
+
+const allPosts = await getCollection('posts');
+const entry = allPosts.find(p => p.data.id === Number(Astro.params.id));
+
+
+if (!entry || !entry.data.clickable) {
+    return Astro.redirect('/');
+}
+
+const { Content } = await render(entry);
+---
+
+
+
+<Layout title="dev.">
+    <PostInfo>
+        <Content />
+    </PostInfo>
+</Layout>

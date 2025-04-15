@@ -1,0 +1,14 @@
+---
+import type VideoBackgroundProps from "../types/Video";
+const props = Astro.props as VideoBackgroundProps;
+---
+
+<video
+    loop
+    muted={props.stop ? false : true}
+    autoplay
+    playsinline
+    transition:persist
+>
+    <source src="/background-doublecut.webm" type="video/webm" />
+</video>

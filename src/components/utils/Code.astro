@@ -1,0 +1,23 @@
+---
+const props = Astro.props;
+
+// sorry, i use parentElement.nextElementSibling.textContent, its stupid code 
+---
+
+<div class='mb-2 w-max'>
+    <div class='flex justify-end text-base/4 -mb-4 cursor-pointer'>
+        <button onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent.trim())">
+            <div class='flex gap-2 rounded-t-sm bg-background hover:bg-backgroundHover px-3'>
+                <img class="mt-0.5" src="/svg/copy.svg" width="15" height="15" alt="copy"></img>
+                copy
+            </div>
+        </button>
+    </div>
+    <slot />
+    {props.subtext && 
+        <div class='flex justify-center text-base'>
+            <i>{props.subtext}</i>
+        </div>
+    }
+   
+</div>
