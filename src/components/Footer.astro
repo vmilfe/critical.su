@@ -1,5 +1,6 @@
 ---
 import { getActualViewers } from '../components/api/Viewer'
+import WebringButtons from './buttons/Webring'
 
 const viewers = await getActualViewers(Astro);
 ---
@@ -11,4 +12,5 @@ const viewers = await getActualViewers(Astro);
         | <a href={import.meta.env.GITHUB_URL} class="hover:text-main" target="_blank">github (click)</a> |
         2025
     </p>
+    <WebringButtons nickname={import.meta.env.WEBRING_NICKNAME}/>
 </footer>

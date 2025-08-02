@@ -2,7 +2,6 @@
 import type Props from '../types/Prefix'
 import VideoButtons from './buttons/Video'
 
-
 const { prefix } = Astro.props as Props
 const navigation = [
     {
@@ -27,19 +26,19 @@ const navigation = [
 
 
 <header class="relative" transition:persist>
-    <div class="text-main flex justify-center items-center h-16">
+    <div class="text-main flex justify-center items-center lg:h-16 h-24">
         <div class="flex">
             {navigation.map((link) => (
                 <a
                     href={link.href}
-                    class="hover:text-secondary transition-colors px-5 text-lg"
+                    class="hover:text-secondary transition-colors px-5 text-5xl  md:text4xl lg:text-lg"
                 >
                     {link.name}
                 </a>
             ))}
         </div>
 
-        <div class="absolute right-0 mr-56 flex gap-3">
+        <div class="absolute right-0 mr-2 md:mr-10 lg:mr-56 flex gap-3">
             <VideoButtons prefix={prefix} client:idle/>
         </div>
     </div>

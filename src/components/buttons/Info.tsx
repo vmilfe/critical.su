@@ -106,7 +106,7 @@ export default function InfoButton() {
     const [activeInfo, setClicked] = useState(false);
 
     return (
-        <div className="absolute bottom-10 mb-5 right-0 left-0 mx-56 ">
+        <div className="absolute bottom-20 mb-5 right-0 left-0 mx-56 ">
             <div className="bg-background ">
                 {activeInfo && skillsModal()}
             </div>
