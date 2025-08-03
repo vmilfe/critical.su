@@ -1,0 +1,27 @@
+name: deploy site to server
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: clone repo
+                uses: actions/checkout@v4
+
+            -   name: install bun packet managet
+                uses: oven-sh/setup-bun@v2
+                with:
+                  bun-version-file: ".bun-version"
+            
+            -   name: install astro packages
+                run: bun install
+            
+            -   name: check errors
+                run: bun run astro check
+
+    deploy:
+        needs: check
+        runs-on: ubuntu-latest
