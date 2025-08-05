@@ -37,6 +37,14 @@ jobs:
             
             -   name: install astro packages
                 run: bun install
+
+            -   name: change env
+                run: |
+                    rm .env
+                    
+                    echo "CRYPTOBOT_URL=${{ secrets.ENV_CRYPTOBOT_URL }}" >> .env
+                    echo "WEBRING_NICKNAME=${{ secrets.ENV_WEBRING_NICKNAME }}" >> .env
+                    echo "GITHUB_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY_OWNER" >> .env
             
             -   name: generate build
                 run: bun run build
@@ -58,12 +66,4 @@ jobs:
                     host: ${{ secrets.SSH_HOST }}
                     username: ${{ secrets.SSH_USER }}
                     key: ${{ secrets.SSH_PRIVATE_KEY }}
-                    script: |
-                        rm .env
-                        echo "CRYPTOBOT_URL=${{ secrets.ENV_CRYPTOBOT_URL }}" >> .env
-                        echo "WEBRING_NICKNAME=${{ secrets.ENV_WEBRING_NICKNAME }}" >> .env
-                        echo "GITHUB_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY_OWNER" >> .env
-                        
-                        cat .env
-
-                        pm2 restart critical.su --update-env
+                    script: pm2 restart critical.su --update-env
