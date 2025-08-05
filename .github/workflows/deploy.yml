@@ -59,10 +59,11 @@ jobs:
                     username: ${{ secrets.SSH_USER }}
                     key: ${{ secrets.SSH_PRIVATE_KEY }}
                     script: |
+                        rm .env
                         cat <<EOF >> .env
                         CRYPTOBOT_URL=${{ secrets.ENV_CRYPTOBOT_URL }}
                         WEBRING_NICKNAME=${{ secrets.ENV_WEBRING_NICKNAME }}
-                        GITHUB_URL="${{ env.GITHUB_SERVER_URL }}/${{ env.GITHUB_REPOSITORY_OWNER }}"
+                        GITHUB_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY_OWNER"
                         EOF
                         cat .env
                         pm2 restart critical.su --update-env
