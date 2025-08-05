@@ -21,6 +21,9 @@ jobs:
             
             -   name: check errors
                 run: bun run astro check
+            
+            -   name: checkout repository owner URL
+                run: echo "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY_OWNER"   
 
     deploy:
         needs: check
