@@ -63,7 +63,9 @@ jobs:
                         cat <<EOF >> .env
                         CRYPTOBOT_URL=${{ secrets.ENV_CRYPTOBOT_URL }}
                         WEBRING_NICKNAME=${{ secrets.ENV_WEBRING_NICKNAME }}
-                        GITHUB_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY_OWNER"
                         EOF
+                        
+                        echo "GITHUB_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY_OWNER" >> .env
                         cat .env
+
                         pm2 restart critical.su --update-env
