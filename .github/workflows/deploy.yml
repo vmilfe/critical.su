@@ -40,8 +40,6 @@ jobs:
 
             -   name: change env
                 run: |
-                    rm .env
-                    
                     echo "CRYPTOBOT_URL=${{ secrets.ENV_CRYPTOBOT_URL }}" >> .env
                     echo "WEBRING_NICKNAME=${{ secrets.ENV_WEBRING_NICKNAME }}" >> .env
                     echo "GITHUB_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY_OWNER" >> .env
