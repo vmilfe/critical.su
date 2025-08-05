@@ -55,11 +55,17 @@ jobs:
                     remote_user: ${{ secrets.SSH_USER }}
                     remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
             
-            -   name: reload site on server via ssh
+            -   name: reload site via ssh
                 uses: appleboy/ssh-action@master
                 with:
                     host: ${{ secrets.SSH_HOST }}
                     username: ${{ secrets.SSH_USER }}
                     key: ${{ secrets.SSH_PRIVATE_KEY }}
                     script: |
+                        cat <<EOF >> .env
+                        CRYPTOBOT_URL=${{ secrets.ENV_CRYPTOBOT_URL }}
+                        WEBRING_NICKNAME=${{ secrets.ENV_WEBRING_NICKNAME }}
+                        GITHUB_URL="${GITHUB_SERVER_URL}\${GITHUB_REPOSITORY_OWNER}"
+                        EOF
+                        cat .env
                         pm2 restart critical.su
