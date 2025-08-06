@@ -6,6 +6,7 @@ import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 
+
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
@@ -14,6 +15,9 @@ export default defineConfig({
     optimize: true,
   })],
   vite: {
+    define: {
+      'process.env': JSON.stringify(process.env)
+    },
     build: {
       minify: 'terser'
     },
