@@ -30,7 +30,7 @@ jobs:
             -   name: clone repo
                 uses: actions/checkout@v4
 
-            -   name: install bun packet managet
+            -   name: install bun packet manager
                 uses: oven-sh/setup-bun@v2
                 with:
                   bun-version-file: ".bun-version"
@@ -38,14 +38,13 @@ jobs:
             -   name: install astro packages
                 run: bun install
 
-            -   name: change env
-                run: |
-                    echo "CRYPTOBOT_URL=${{ secrets.ENV_CRYPTOBOT_URL }}" >> .env
-                    echo "WEBRING_NICKNAME=${{ secrets.ENV_WEBRING_NICKNAME }}" >> .env
-                    echo "GITHUB_URL=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY_OWNER" >> .env
-            
             -   name: generate build
-                run: bun run build
+                run: |
+                    export GITHUB_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY_OWNER" 
+                    bun run build
+                env:
+                    CRYPTOBOT_URL: ${{ secrets.ENV_CRYPTOBOT_URL }}
+                    WEBRING_NICKNAME: ${{ secrets.ENV_WEBRING_NICKNAME }}
             
             -   name: copy to server
                 uses: burnett01/rsync-deployments@master
